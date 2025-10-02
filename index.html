@@ -1,21 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+class="p-o m-0"
+lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet">
 
 
   <!-- Stylesheet links And Scripts-->
   <link href="./src/output.css" rel="stylesheet">
-  <script src="scripts/main.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="./scripts/header.js"></script>
+
+  <style>
+
+  </style>
 
   <title>Coffee Go</title>
 </head>
 <body>
-  <nav>
-  </nav>
+  <nav
+  class="flex items-center justify-between p-3 border-b rounded-b-xl fixed top-0 right-0 left-0 z-5000 group">
+  <a 
+  class="font-medium font-poppins"
+  href="#">
+    coffee<span
+    class="text-amber-700">Go</span>.
+  </a>
+  
+  <div
+  class="absolute right-full top-full w-40 bg-amber-600 h-screen group-active:right-0"
+  id="nav">
+    <a 
+    class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+    href="#">
+      Home
+    </a>
+    <a 
+    class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+    href="#">
+      Menu
+    </a>
+    <a 
+    class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+    href="#">
+      Contact Us
+    </a>
+  </div>
+
+  <div>
+    <a href="#" id="hamburger">
+      <i data-feather="menu"></i>
+    </a>
+  </div>
+  </nav> 
 
   <main>
     
@@ -24,5 +65,9 @@
   <footer>
 
   </footer>
+  <script>
+    //const { document } = require("postcss");
+    feather.replace();
+  </script>
 </body>
 </html>
