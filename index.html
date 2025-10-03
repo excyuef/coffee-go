@@ -23,7 +23,7 @@ lang="en">
 </head>
 <body>
   <nav
-  class="flex items-center justify-between p-3 border-b rounded-b-xl fixed top-0 right-0 left-0 z-5000 group">
+  class="flex items-center justify-between p-3 border-b rounded-b-xl fixed top-0 right-0 left-0 z-5000">
     <a 
     class="font-medium font-poppins"
     href="#">
@@ -32,8 +32,9 @@ lang="en">
     </a>
     
     <div
-    class="absolute -right-full top-full w-40 bg-amber-600 h-screen transition-all duration-300 group-active:right-0"
+    class="absolute -right-full top-full w-40 bg-amber-600 h-screen transition-all duration-300"
     id="nav">
+      <button id="exit">tes</button>
       <a 
       class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
       href="#">
@@ -51,11 +52,11 @@ lang="en">
       </a>
     </div>
 
-    <div>
+    <div
+    id="hamburger">
       <a href="#">
         <i data-feather="menu"></i>
       </a>
-      <button id="hamburger">tes</button>
     </div>
   </nav> 
 

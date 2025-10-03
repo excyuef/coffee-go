@@ -254,11 +254,6 @@
     --tw-ease: var(--ease-in);
     transition-timing-function: var(--ease-in);
   }
-  .group-active\:right-0 {
-    &:is(:where(.group):active *) {
-      right: calc(var(--spacing) * 0);
-    }
-  }
   .after\:block {
     &::after {
       content: var(--tw-content);
