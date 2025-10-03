@@ -2,25 +2,24 @@
 
 @theme {
   --font-poppins: "Poppins", sans-serif; 
-  --animate-muncul: 
-    from {
-    right: -100%;
-    opacity: 0;
-    } to {
-    right: 0;
-    opacity: 1;
-    };
-  ----animate-hilang: 
-    from {
-    right: 0;
-    opacity: 1;
-    } to {
-    right: -100%;
-    opacity: 0;
-    };
-}
-
-.hilang {
-  @apply
+  --animate-muncul: muncul 1s forwards;
+  --animate-hilang: hilang 1s forwards;
     
+    @keyframes muncul {
+      0% {
+        right: -100%;
+      }
+      100% {
+        right: 0;
+      }
+    }
+
+    @keyframes hilang {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: -100%;
+      }
+    }
 }

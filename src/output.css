@@ -18,6 +18,8 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-poppins: "Poppins", sans-serif;
+    --animate-muncul: muncul 1s forwards;
+    --animate-hilang: hilang 1s forwards;
   }
 }
 @layer base {
@@ -193,9 +195,6 @@
   .z-5000 {
     z-index: 5000;
   }
-  .m-0 {
-    margin: calc(var(--spacing) * 0);
-  }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
@@ -210,6 +209,12 @@
   }
   .w-40 {
     width: calc(var(--spacing) * 40);
+  }
+  .animate-hilang {
+    animation: var(--animate-hilang);
+  }
+  .animate-muncul {
+    animation: var(--animate-muncul);
   }
   .items-center {
     align-items: center;
@@ -303,6 +308,26 @@
       }
     }
   }
+  .sm\:static {
+    @media (width >= 40rem) {
+      position: static;
+    }
+  }
+  .sm\:h-auto {
+    @media (width >= 40rem) {
+      height: auto;
+    }
+  }
+  .sm\:w-auto {
+    @media (width >= 40rem) {
+      width: auto;
+    }
+  }
+  .sm\:bg-inherit {
+    @media (width >= 40rem) {
+      background-color: inherit;
+    }
+  }
 }
 @property --tw-border-style {
   syntax: "*";
@@ -340,6 +365,22 @@
   syntax: "*";
   inherits: false;
   initial-value: 1;
+}
+@keyframes muncul {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+@keyframes hilang {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {

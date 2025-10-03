@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html 
-class="p-o m-0"
-lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,12 +11,6 @@ lang="en">
   <!-- Stylesheet links And Scripts-->
   <link href="./src/output.css" rel="stylesheet">
   <script src="https://unpkg.com/feather-icons"></script>
-  <script src="./scripts/header.js"></script>
-
-  <style>
-
-  </style>
-
   <title>Coffee Go</title>
 </head>
 <body>
@@ -32,9 +24,11 @@ lang="en">
     </a>
     
     <div
-    class="absolute -right-full top-full w-40 bg-amber-600 h-screen transition-all duration-300"
-    id="nav">
-      <button id="exit">tes</button>
+    class="absolute top-full -right-full w-40 sm:w-auto bg-amber-600 h-screen transition-all duration-300 sm:static sm:h-auto sm:bg-inherit"
+    id="link">
+      <button 
+      class="mr-2"
+      id="exit">tes</button>
       <a 
       class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
       href="#">
@@ -70,6 +64,21 @@ lang="en">
   <script>
     //const { document } = require("postcss");
     feather.replace();
+
+    const nav = document.querySelector('#link');
+    const menu = document.querySelector('#hamburger');
+    const exit = document.querySelector('#exit');
+
+    menu.addEventListener("click", () => {
+      nav.classList.remove("animate-hilang")
+      nav.classList.add("animate-muncul")
+    })
+
+    exit.addEventListener("click", () => {
+      nav.classList.remove("animate-muncul")
+      nav.classList.add("animate-hilang")
+    })
+
   </script>
 </body>
 </html>
