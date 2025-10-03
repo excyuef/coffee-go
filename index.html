@@ -13,49 +13,73 @@
   <script src="https://unpkg.com/feather-icons"></script>
   <title>Coffee Go</title>
 </head>
-<body>
+<body
+class="bg-cream pt-15 px-4">
   <nav
-  class="flex items-center justify-between p-3 border-b rounded-b-xl fixed top-0 right-0 left-0 z-5000">
-    <a 
-    class="font-medium font-poppins"
-    href="#">
-      coffee<span
-      class="text-amber-700">Go</span>.
-    </a>
-    
-    <div
-    class="absolute top-full -right-full w-40 sm:w-auto bg-amber-600 h-screen transition-all duration-300 sm:static sm:h-auto sm:bg-inherit"
-    id="link">
-      <button 
-      class="mr-2"
-      id="exit">tes</button>
+  class="flex justify-between sm:justify-center p-3 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-kopi">
+    <div>
       <a 
-      class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+      class="font-medium font-poppins text-cream absolute top-3 left-3"
+      href="#">
+        coffee<span
+      class="text-daunkopi">Go</span>.
+      </a>
+    
+    </div>
+    <div
+    class="absolute top-0 -right-full w-40 sm:w-auto h-screen bg-transition-all duration-300 sm:static sm:h-auto sm:bg-inherit rounded-l-lg rounded-lg bg-kopi text-cream"
+    id="link">
+      <div
+      class="flex flex-row justify-between p-3 font-semibold sm:hidden">
+        <p
+        class="text-md hover:text-daunkopi transition-all ease">
+          Navigation
+        </p>
+        <button 
+        class="text-right"
+        id="exit"> 
+        <a href="#">
+          <i
+          class="hover:text-daunkopi transition-all ease" 
+          data-feather="x"></i>
+        </a>
+      </button>
+      </div>
+      <a 
+      class="nav-link"
       href="#">
         Home
       </a>
       <a 
-      class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+      class="nav-link"
       href="#">
         Menu
       </a>
       <a 
-      class="hover:text-amber-700 after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in inline-block mr-2"
+      class="nav-link"
       href="#">
         Contact Us
       </a>
     </div>
 
     <div
+    class="sm:hidden text-cream"
     id="hamburger">
       <a href="#">
-        <i data-feather="menu"></i>
+        <i 
+        class="hover:text-daunkopi transition-all ease"
+        data-feather="menu"></i>
       </a>
     </div>
   </nav> 
 
   <main>
-    
+    <div
+    class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi omnis id cupiditate sed quam tenetur possimus nostrum ipsam impedit! Atque consequuntur consectetur veritatis quidem, quod cupiditate eligendi aut aperiam. Ratione!
+      </p>
+    </div>
   </main>
 
   <footer>

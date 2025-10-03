@@ -4,6 +4,10 @@
   --font-poppins: "Poppins", sans-serif; 
   --animate-muncul: muncul 1s forwards;
   --animate-hilang: hilang 1s forwards;
+  --color-kopi: #3E2723;
+  --color-cream: #FAF3E0;
+  --color-espresso: #2c2c2c;
+  --color-daunkopi: #3A5A40;
     
     @keyframes muncul {
       0% {
@@ -22,4 +26,9 @@
         right: -100%;
       }
     }
+}
+
+.nav-link {
+  @apply
+    hover:text-daunkopi after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in block sm:inline-block mr-2 text-center
 }
