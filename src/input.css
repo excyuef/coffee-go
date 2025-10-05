@@ -8,22 +8,27 @@
   --color-cream: #FAF3E0;
   --color-espresso: #2c2c2c;
   --color-daunkopi: #3A5A40;
+  --color-susu: #F2F2F2;
     
     @keyframes muncul {
       0% {
         right: -100%;
+        opacity: 0;
       }
       100% {
         right: 0;
+        opacity: 100;
       }
     }
 
     @keyframes hilang {
       0% {
         right: 0;
+        opacity: 100;
       }
       100% {
         right: -100%;
+        opacity: 0;
       }
     }
 }
