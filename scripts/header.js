@@ -1,4 +1,5 @@
-//const { document } = require("postcss");
+feather.replace();
+
 const nav = document.querySelector('#link');
 const menu = document.querySelector('#hamburger');
 const exit = document.querySelector('#exit');

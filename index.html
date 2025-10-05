@@ -10,7 +10,6 @@
 
   <!-- Stylesheet links And Scripts-->
   <link href="./src/output.css" rel="stylesheet">
-  <script src="https://unpkg.com/feather-icons"></script>
   <title>Coffee Go</title>
 </head>
 <body
@@ -75,26 +74,26 @@ class="bg-cream pt-15 px-3 pb-150">
 
   <main>
     <div
-    class="w-full border">
+    class="w-full lg:px-24 sm:grid sm:grid-cols-3 sm:gap-4 sm:h-9/12">
       <div
-      class="container mb-8">
+      class="sm:container sm:col-start-1 sm:col-end-3 relative sm:h-full group">
         <div
-        class="rounded-t-xl h-82 w-full aspect-square bg-[url(/images/barista.webp)] bg-center bg-cover relative">
+        class="sm:rounded-2xl rounded-t-2xl h-82 sm:h-full w-full bg-[url(/images/barista.webp)] bg-center bg-cover">
         </div>
         <div 
-        class="bg-cream w-full p-3 text-espresso">
+        class="bg-cream sm:bg-cream/50 w-full py-3 px-4 text-espresso sm sm:absolute sm:aspect-square sm:w-72 sm:top-1/4 sm:left-22 sm:rounded-2xl flex flex-col gap-4 sm:p-8">
           <p
-          class="font-bold text-lg mb-3">
+          class="font-bold text-lg sm:text-xl">
             Kopi Terbaik Hanya Di Coffee Go
           </p>
 
           <p 
-          class="text-xs mb-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ducimus quia tempora ipsum repudiandae saepe.
+          class="text-xs sm:text-base">
+            “Setiap tetes adalah dedikasi. Kopi pilihan kami diracik dari biji terbaik untuk menghadirkan kualitas premium di setiap cangkir.”
           </p>
 
           <button
-          class="text-xs bg-kopi py-2 px-3 text-cream rounded-lg ring-1 ring-kopi hover:bg-transparent hover:text-kopi transition-all ease">
+          class="text-xs sm:text-sm bg-kopi py-2 px-3 text-cream rounded-lg ring-1 ring-kopi hover:bg-transparent hover:text-kopi transition-all ease w-38 sm:w-44">
             <a href="#">
               Baca Selengkapnya
             </a>
@@ -103,63 +102,74 @@ class="bg-cream pt-15 px-3 pb-150">
       </div>
 
       <div
-      class="container mb-8 rounded-xl overflow-hidden hover:shadow-xl">
+      class="pt-3 sm:p-0 flex flex-col gap-4 sm:col-start-3">
         <div
-        class="h-48 w-full aspect-square bg-[url(/images/cfc.avif)] bg-center bg-cover">
-        </div>
-        <div 
-        class="bg-kopi w-full p-3 text-susu">
-          <p
-          class="font-bold text-lg mb-3">
-            Alternatif Kopi Ramah Lingkungan
-          </p>
-
-          <p 
-          class="text-xs mb-4 text-cream">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ducimus quia tempora ipsum repudiandae saepe.
-          </p>
-
+        class="container rounded-2xl overflow-hidden group">
           <div
-          class="w-full text-right mb-2">
-            <a 
-            class="text-xs"
-            href="https://www.ft.com/content/91d27817-a90f-4741-af05-c71debe8581e?utm_source=chatgpt.com">
-              Baca Selengkapnya 
-              <i 
-              class="h-4 inline-block"
-              data-feather="arrow-right"></i>
-            </a>
+          class="h-48 overflow-hidden">
+            <img 
+            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease"
+            src="/images/cfc.avif" 
+            alt="Kopi eco-friendly">
+          </div>
+          <div 
+          class="bg-kopi w-full py-3 px-4 text-susu">
+            <p
+            class="font-bold text-lg mb-3">
+              Alternatif Kopi Ramah Lingkungan
+            </p>
+
+            <p 
+            class="text-xs sm:text-sm mb-4 text-cream">
+              Kopi ramah lingkungan dibuat dari teh hijau, rasanya mirip kopi asli dan lebih eco-friendly.
+            </p>
+
+            <div
+            class="w-full text-right mb-2">
+              <a 
+              class="text-xs sm:text-sm"
+              href="https://www.ft.com/content/91d27817-a90f-4741-af05-c71debe8581e?utm_source=chatgpt.com">
+                Baca Selengkapnya 
+                <i 
+                class="h-4 inline-block"
+                data-feather="arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div
-      class="container overflow-hidden rounded-xl">
         <div
-        class="rounded-t-xl h-48 w-full aspect-square bg-[url(/images/hero-3.jpg)] bg-center bg-cover relative">
-        </div>
-        <div 
-        class="bg-kopi w-full p-3 text-susu">
-          <p
-          class="font-bold text-lg mb-3">
-            Cuaca Ekstrem Dorong Harga Kopi Naik
-          </p>
-
-          <p 
-          class="text-xs mb-4">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius ducimus quia tempora ipsum repudiandae saepe.
-          </p>
-          
+        class="container overflow-hidden rounded-2xl group">
           <div
-          class="w-full text-right mb-3">
-            <a 
-            class="text-xs"
-            href="https://www.fao.org/newsroom/detail/adverse-climatic-conditions-drive-coffee-prices-to-highest-level-in-years/en?utm_source=chatgpt.com">
-              Baca Selengkapnya 
-              <i 
-              class="h-4 inline-block"
-              data-feather="arrow-right"></i>
-            </a>
+          class="h-48 overflow-hidden">
+            <img 
+            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease"
+            src="/images/hero-3.jpg" 
+            alt="Biji kopi">
+          </div>
+          <div 
+          class="bg-kopi w-full py-3 px-4 text-susu">
+            <p
+            class="font-bold text-lg mb-3">
+              Cuaca Ekstrem Dorong Harga Kopi Naik
+            </p>
+
+            <p 
+            class="text-xs sm:text-sm mb-4">
+              Cuaca ekstrem mengurangi panen kopi, menyebabkan pasokan turun dan harga kopi dunia naik tajam.
+            </p>
+            
+            <div
+            class="w-full text-right mb-3">
+              <a 
+              class="text-xs sm:text-sm"
+              href="https://www.fao.org/newsroom/detail/adverse-climatic-conditions-drive-coffee-prices-to-highest-level-in-years/en?utm_source=chatgpt.com">
+                Baca Selengkapnya 
+                <i 
+                class="h-4 inline-block"
+                data-feather="arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -169,24 +179,7 @@ class="bg-cream pt-15 px-3 pb-150">
   <footer>
 
   </footer>
-  <script>
-    //const { document } = require("postcss");
-    feather.replace();
-
-    const nav = document.querySelector('#link');
-    const menu = document.querySelector('#hamburger');
-    const exit = document.querySelector('#exit');
-
-    menu.addEventListener("click", () => {
-      nav.classList.remove("animate-hilang")
-      nav.classList.add("animate-muncul")
-    })
-
-    exit.addEventListener("click", () => {
-      nav.classList.remove("animate-muncul")
-      nav.classList.add("animate-hilang")
-    })
-
-  </script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="./scripts/header.js"></script>
 </body>
 </html>
