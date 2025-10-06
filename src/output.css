@@ -18,6 +18,10 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
@@ -338,9 +342,6 @@
   .bg-kopi {
     background-color: var(--color-kopi);
   }
-  .bg-transparent {
-    background-color: transparent;
-  }
   .bg-\[url\(\/images\/barista\.webp\)\] {
     background-image: url(/images/barista.webp);
   }
@@ -359,17 +360,29 @@
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
   .px-3 {
     padding-inline: calc(var(--spacing) * 3);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-5 {
+    padding-block: calc(var(--spacing) * 5);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
   }
   .pt-3 {
     padding-top: calc(var(--spacing) * 3);
@@ -490,6 +503,11 @@
       top: calc(1/4 * 100%);
     }
   }
+  .sm\:left-20 {
+    @media (width >= 40rem) {
+      left: calc(var(--spacing) * 20);
+    }
+  }
   .sm\:left-22 {
     @media (width >= 40rem) {
       left: calc(var(--spacing) * 22);
@@ -565,9 +583,9 @@
       height: 100%;
     }
   }
-  .sm\:w-44 {
+  .sm\:w-40 {
     @media (width >= 40rem) {
-      width: calc(var(--spacing) * 44);
+      width: calc(var(--spacing) * 40);
     }
   }
   .sm\:w-72 {
@@ -623,10 +641,16 @@
       padding: calc(var(--spacing) * 8);
     }
   }
-  .sm\:text-base {
+  .sm\:text-2xl {
     @media (width >= 40rem) {
-      font-size: var(--text-base);
-      line-height: var(--tw-leading, var(--text-base--line-height));
+      font-size: var(--text-2xl);
+      line-height: var(--tw-leading, var(--text-2xl--line-height));
+    }
+  }
+  .sm\:text-8xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-8xl);
+      line-height: var(--tw-leading, var(--text-8xl--line-height));
     }
   }
   .sm\:text-sm {
@@ -635,10 +659,10 @@
       line-height: var(--tw-leading, var(--text-sm--line-height));
     }
   }
-  .sm\:text-xl {
+  .sm\:text-xs {
     @media (width >= 40rem) {
-      font-size: var(--text-xl);
-      line-height: var(--tw-leading, var(--text-xl--line-height));
+      font-size: var(--text-xs);
+      line-height: var(--tw-leading, var(--text-xs--line-height));
     }
   }
   .md\:top-4 {
