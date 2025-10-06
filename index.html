@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html 
+class="scroll-smooth"
+lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +16,12 @@
   <title>Coffee Go</title>
 </head>
 <body
-class="bg-cream pt-15 px-3 pb-150 font-poppins">
+class="bg-cream pt-16 px-3 pb-150 font-poppins">
   <nav
-  class="flex justify-between sm:justify-center p-3 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-kopi">
+  class="flex justify-between sm:justify-center p-3 md:p-4 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-kopi">
     <div>
       <p 
-      class="font-medium font-semibold italic text-cream absolute top-3 left-3">
+      class="font-bold italic text-cream absolute top-3 left-3 sm:left-28 lg:text-xl md:top-4">
         coffee<span
       class="text-daunkopi">Go</span>.
       </p>
@@ -29,20 +31,18 @@ class="bg-cream pt-15 px-3 pb-150 font-poppins">
     class="absolute top-0 -right-full w-40 sm:w-auto h-screen duration-300 sm:static sm:h-auto sm:bg-inherit rounded-l-lg rounded-lg bg-kopi text-cream transition-all"
     id="link">
       <div
-      class="flex flex-row justify-between p-3 font-semibold sm:hidden">
+      class="flex flex-row justify-between p-4 font-semibold sm:hidden">
         <p
         class="text-md hover:text-daunkopi transition-all ease">
           Navigation
         </p>
         <button 
         class="text-right"
-        id="exit"> 
-        <a href="#">
+        id="exit">
           <i
           class="hover:text-daunkopi transition-all ease" 
           data-feather="x"></i>
-        </a>
-      </button>
+        </button>
       </div>
       <a 
       class="nav-link"
@@ -64,17 +64,14 @@ class="bg-cream pt-15 px-3 pb-150 font-poppins">
     <div
     class="sm:hidden text-cream"
     id="hamburger">
-      <a href="#">
-        <i 
-        class="hover:text-daunkopi transition-all ease"
-        data-feather="menu"></i>
-      </a>
+      <i class="hover:text-daunkopi transition-all ease"
+      data-feather="menu"></i>
     </div>
   </nav> 
 
   <main>
     <div
-    class="w-full lg:px-24 sm:grid sm:grid-cols-3 sm:gap-4 sm:h-9/12">
+    class="w-full lg:px-24 sm:grid sm:grid-cols-3 sm:gap-4 sm:h-7/12">
       <div
       class="sm:container sm:col-start-1 sm:col-end-3 relative sm:h-full group">
         <div
@@ -108,7 +105,7 @@ class="bg-cream pt-15 px-3 pb-150 font-poppins">
           <div
           class="h-48 overflow-hidden">
             <img 
-            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease"
+            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease duration-400"
             src="/images/cfc.avif" 
             alt="Kopi eco-friendly">
           </div>
@@ -143,7 +140,7 @@ class="bg-cream pt-15 px-3 pb-150 font-poppins">
           <div
           class="h-48 overflow-hidden">
             <img 
-            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease"
+            class="h-full w-full object-cover object-center group-hover:scale-110 transition-all ease duration-400"
             src="/images/hero-3.jpg" 
             alt="Biji kopi">
           </div>
