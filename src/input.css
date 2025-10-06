@@ -35,5 +35,5 @@
 
 .nav-link {
   @apply
-    hover:text-daunkopi after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in block sm:inline-block mr-3 text-center
+    hover:text-daunkopi after:border-b-2 after:scale-0 after:block hover:after:scale-50 transition-all after:duration-500 ease-in block sm:inline-block sm:mr-3 text-center
 }
