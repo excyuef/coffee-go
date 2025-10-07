@@ -2,6 +2,7 @@
 
 @theme {
   --font-poppins: "Poppins", sans-serif; 
+  --font-lavishly: "Lavishly Yours", sans-serif;
   --animate-muncul: muncul 1s forwards;
   --animate-hilang: hilang 1s forwards;
   --color-kopi: #3E2723;
