@@ -17,6 +17,14 @@ lang="en">
   <!-- Stylesheet links And Scripts-->
   <link href="./src/output.css" rel="stylesheet">
   <title>Coffee Go</title>
+
+  <style>
+  /* small helper for smooth height animation */
+  .collapsing {
+  transition: height 280ms cubic-bezier(.4,0,.2,1);
+  overflow: hidden;
+  }
+  </style>
 </head>
 <body
 class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
@@ -332,11 +340,11 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-kopi hover:text-cream transition-all ease duration-400">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5">
+                  class="bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -376,11 +384,11 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-daunkopi hover:text-cream transition-all ease duration-400">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5">
+                  class="bg-white rounded-full p-2.5 hover:bg-daunkopi hover:text-cream transition-all ease duration-400">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -420,11 +428,11 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4 absolute">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-espresso hover:text-cream transition-all ease duration-400">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5">
+                  class="bg-white rounded-full p-2.5 hover:bg-espresso hover:text-cream transition-all ease duration-400">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -464,28 +472,118 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4 text-sm">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold hover:bg-kopi hover:text-cream transition-all ease duration-400">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5">
+                  class="bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-
-          
-
         </div>
       </div>
+    </section>
+
+    <section 
+    class="max-w-2xl w-full p-6 space-y-4">
+      <h1 
+      class="text-3xl font-extrabold text-center mb-6">
+      Pertanyaan yang Sering Diajukan
+      </h1>
+
+    <!-- ITEM 1 -->
+      <details 
+      class="faq border rounded-xl bg-white shadow-sm p-4 overflow-hidden">
+
+        <summary 
+        class="cursor-pointer font-semibold text-slate-700 select-none flex justify-between items-center">
+          Apa itu layanan ini?
+
+          <svg 
+          class="w-5 h-5 text-slate-500 transition-transform duration-300" 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+
+        </summary>
+
+        <div 
+        class="content overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out max-h-0 opacity-0">
+          <p 
+          class="mt-3 text-slate-600">
+            Layanan ini membantu Anda membuat proyek web lebih cepat dengan komponen siap pakai berbasis Tailwind CSS.
+          </p>
+        </div>
+
+      </details>
     </section>
   </main>
 
   <footer>
 
   </footer>
+    <script>
+    // Ambil semua elemen <details>
+    const faqs = document.querySelectorAll('.faq');
+
+    faqs.forEach((faq) => {
+      const summary = faq.querySelector('summary');   // tombol ringkasan (yang diklik)
+      const content = faq.querySelector('.content');   // isi yang dianimasikan
+      const icon = summary.querySelector('svg');       // ikon panah
+
+      // Matikan perilaku default browser agar kita bisa kendalikan buka/tutup manual
+      summary.addEventListener('click', (e) => {
+        e.preventDefault(); // mencegah <details> langsung buka/tutup otomatis
+
+        // Jika sedang terbuka, tutup dengan animasi
+        if (faq.hasAttribute('open')) {
+          closeFaq(faq, content, icon);
+        } else {
+          openFaq(faq, content, icon);
+        }
+      });
+    });
+
+    // Fungsi untuk animasi buka
+    function openFaq(faq, content, icon) {
+      faq.setAttribute('open', 'true'); // tandai status terbuka
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.style.opacity = '1';
+      icon.style.transform = 'rotate(180deg)';
+
+      // Setelah transisi selesai, biarkan maxHeight auto agar bisa menyesuaikan isi
+      content.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName === 'max-height') {
+          content.style.maxHeight = 'none';
+          content.removeEventListener('transitionend', handler);
+        }
+      });
+    }
+
+    // Fungsi untuk animasi tutup
+    function closeFaq(faq, content, icon) {
+      // Kembalikan maxHeight ke tinggi aslinya dulu (agar animasi bisa dimulai)
+      content.style.maxHeight = content.scrollHeight + 'px';
+      content.offsetHeight; // paksa browser hitung ulang layout
+      content.style.maxHeight = '0px';
+      content.style.opacity = '0';
+      icon.style.transform = 'rotate(0deg)';
+
+      // Setelah animasi selesai, benar-benar tutup <details>
+      content.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName === 'max-height') {
+          faq.removeAttribute('open');
+          content.removeEventListener('transitionend', handler);
+        }
+      });
+    }
+  </script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="./scripts/header.js"></script>
 </body>
