@@ -39,3 +39,8 @@
     hover:text-kopi after:border-b-2 after:scale-0 after:block hover:after:scale-80 transition-all after:duration-600 ease-in block sm:inline-block sm:mr-3 text-center text-espresso
     font-semibold
 }
+
+.button {
+  @apply 
+    border border-kopi py-3 rounded-4xl font-semibold bg-espresso text-susu hover:bg-gray-800 dark:hover:bg-kopi transition-all
+}

@@ -503,7 +503,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
         </div>
 
         <div
-        class="flex flex-col lg:flex-row gap-4">
+        class="flex flex-col lg:flex-row gap-12">
           <div
           class="space-y-4 lg:w-7/12 w-full">
             <details 
@@ -692,9 +692,91 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             </details>
           </div>
 
-          <div
-          class="lg:w-5/12 w-full h-42 bg-cream rounded-2xl">
+          <div class="flex flex-col gap-2 border border-gray-300 w-full lg:w-5/12 m-auto rounded-2xl text-left justify-center px-5 py-4">
 
+            <div class="text-center font-bold text-2xl my-4 text-indigo-700">
+              Login Your Account :) 
+            </div>
+
+            <label class="text-lg" for="email">
+              <span class="block font-semibold mb-1 after:content-['*'] after:ml-0 after:text-red-500">
+                Email
+              </span>
+
+              <input 
+              placeholder="Masukkan Email..." 
+              id="email" 
+              type="email"
+              class="
+              border-gray-300 border placeholder:text-sm p-2 rounded-lg
+              invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
+              focus:outline-none focus:ring-1 w-full mb-1 shadow-md peer">
+
+              <p 
+              class="
+              text-sm text-pink-700 invisible 
+              peer-invalid:visible">
+                Format Email Tidak Valid
+              </p>
+            </label>
+            <label class="text-lg" for="nama">
+              <span class="block font-semibold mb-1 after:content-['*'] after:ml-0 after:text-red-500 ">
+                Password
+              </span>
+
+              <input 
+              placeholder="Masukkan Nama..." 
+              id="nama" 
+              type="text"
+              pattern="^[A-Za-z\s]{3,}$"
+              class="
+              border-gray-300 border placeholder:text-sm p-2 rounded-lg
+              invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
+              focus:outline-none focus:ring-1 w-full mb-1 shadow-md peer">
+
+              <p 
+              class="
+              text-sm text-pink-700 invisible 
+              peer-invalid:visible">
+                Format Nama Tidak Valid
+              </p>
+            </label>
+
+            <div class="flex flex-row justify-center gap-4 mb-3 mt-2 bg">
+              <button 
+              popovertarget="terkirim"
+              id="btnKirim"
+              class="button">
+                Submit
+              </button>
+            </div>
+
+            <div 
+            popover
+            id="terkirim"
+            anchor="btnKirim"
+            class="bg-slate-800 w-72 h-49 m-auto scale-125 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400">
+              <div
+              class="w-7.5 h-7.5 rounded-full bg-indigo-700 m-auto mt-6 mb-6 opacity-20">
+              </div>
+              <div class="text-center">
+                <p 
+                class="text-slate-100 font-medium text-sm mb-2">
+                  Welcome to Coffee Go
+                </p>
+                <p 
+                class="text-slate-100 font-medium text-xs mb-1">
+                  Your login request has send :) <br>
+                  click the button to closed
+                </p>
+
+                <button 
+                class="bg-indigo-600 text-slate-50 mt-3 text-xs py-1.5 w-11/12 px-2 font-medium rounded-sm"
+                popovertarget="terkirim">
+                  Close
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
