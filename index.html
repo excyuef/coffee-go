@@ -289,7 +289,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
     <section
     class="p-4 lg:px-24">
       <div
-      class="container bg-white rounded-2xl border-8 border-white w-full mx-auto">
+      class="bg-white rounded-2xl border-8 border-white w-full mx-auto">
         <div
         class="text-center pt-6">
           <h1
@@ -307,17 +307,21 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
         </div>
 
         <div
-        class="flex flex-row gap-4 md:gap-5  lg:gap-8 overflow-x-auto w-auto py-8 px-8 md:px-5 snap-mandatory snap-x">
+        class="flex flex-row gap-4 md:gap-5 lg:gap-8 overflow-x-auto w-auto py-8 px-8 md:px-5 snap-mandatory snap-x">
           <div
           class="w-full md:w-auto snap-center shrink-0 pt-10 lg:scale-105">
             <div
             class="bg-cream md:w-86 w-full h-66 rounded-xl relative flex justify-center pt-32 overflow-x-clip">
               <div
-              class="w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10">
+              class="w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 flex justify-center items-center hover:p-10">
                 <img 
-                class="aspect-square object-cover object-[25%_75%] -ml-0.5"
+                class="aspect-square object-cover object-[25%_75%]"
                 src="images/product/kopsu.png" 
                 alt="kopi-susu">
+                <img 
+                class="absolute h-22 aspect-square top-18 -left-11"
+                src="images/icon/discount-2-removebg-preview.png" 
+                alt="discount">
               </div>
               <img 
               class="absolute w-35 h-35 -right-3 top-0 rounded-tr-4xl"
@@ -357,13 +361,13 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-daunkopi absolute -top-6 flex justify-center items-center overflow-hidden">
+              class="w-32 h-32 rounded-full bg-daunkopi absolute -top-6 flex justify-center items-center overflow-hidden group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 hover:p-10">
                 <img 
-                class="h-24 mx-auto mt-3 absolute z-10"
+                class="h-24 absolute z-10 group-hover:scale-200 transition-all ease"
                 src="images/product/matcha.png" 
                 alt="matcha">
                 <img 
-                class="absolute z-2 h-32 w-32 object-cover"
+                class="absolute z-2 h-32 w-32 object-cover group-hover:scale-200 transition-all ease"
                 src="images/element/matcha/daun-matcha.png" 
                 alt="daun-matcha">
               </div>
@@ -401,9 +405,9 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-espresso absolute -top-6 p-2">
+              class="w-32 h-32 rounded-full bg-espresso absolute -top-6 pt-2 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 z-10">
                 <img 
-                class="aspect-square object-center object-cover scale-135 -mt-7"
+                class="aspect-square object-bottom object-cover scale-120 group-hover:scale-80 group-hover:-mt-10 transition-all ease"
                 src="images/product/americano.png" 
                 alt="americano">
               </div>
@@ -445,13 +449,13 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-linear-to-t from-kopi to-susu absolute -top-6 p-2 flex justify-center items-center">
+              class="w-32 h-32 rounded-full bg-linear-to-t from-kopi to-susu absolute -top-6 p-2 flex justify-center items-center group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0">
                 <img 
-                class="absolute z-0 scale-120"
+                class="absolute z-0 scale-120 group-hover:scale-80 transition-all ease"
                 src="images/element/element-splash.png" 
                 alt="bean">
                 <img
-                class="z-10 absolute scale-90" 
+                class="z-10 absolute scale-90 group-hover:scale-60 transition-all ease" 
                 src="images/product/gula-aren.png" 
                 alt="kopi-gula-aren">
               </div>
@@ -692,89 +696,113 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             </details>
           </div>
 
-          <div class="flex flex-col gap-2 border border-gray-300 w-full lg:w-5/12 m-auto rounded-2xl text-left justify-center px-5 py-4">
+          <div class="w-full lg:w-5/12">
 
-            <div class="text-center font-bold text-2xl my-4 text-indigo-700">
-              Login Your Account :) 
-            </div>
-
-            <label class="text-lg" for="email">
-              <span class="block font-semibold mb-1 after:content-['*'] after:ml-0 after:text-red-500">
-                Email
-              </span>
-
-              <input 
-              placeholder="Masukkan Email..." 
-              id="email" 
-              type="email"
-              class="
-              border-gray-300 border placeholder:text-sm p-2 rounded-lg
-              invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
-              focus:outline-none focus:ring-1 w-full mb-1 shadow-md peer">
-
-              <p 
-              class="
-              text-sm text-pink-700 invisible 
-              peer-invalid:visible">
-                Format Email Tidak Valid
-              </p>
-            </label>
-            <label class="text-lg" for="nama">
-              <span class="block font-semibold mb-1 after:content-['*'] after:ml-0 after:text-red-500 ">
-                Password
-              </span>
-
-              <input 
-              placeholder="Masukkan Nama..." 
-              id="nama" 
-              type="text"
-              pattern="^[A-Za-z\s]{3,}$"
-              class="
-              border-gray-300 border placeholder:text-sm p-2 rounded-lg
-              invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
-              focus:outline-none focus:ring-1 w-full mb-1 shadow-md peer">
-
-              <p 
-              class="
-              text-sm text-pink-700 invisible 
-              peer-invalid:visible">
-                Format Nama Tidak Valid
-              </p>
-            </label>
-
-            <div class="flex flex-row justify-center gap-4 mb-3 mt-2 bg">
-              <button 
-              popovertarget="terkirim"
-              id="btnKirim"
-              class="button">
-                Submit
-              </button>
-            </div>
-
-            <div 
-            popover
-            id="terkirim"
-            anchor="btnKirim"
-            class="bg-slate-800 w-72 h-49 m-auto scale-125 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400">
+            <div
+            class="border-2 border-kopi rounded-2xl text-left bg-cream px-5 pt-5 h-full">
               <div
-              class="w-7.5 h-7.5 rounded-full bg-indigo-700 m-auto mt-6 mb-6 opacity-20">
+              class="mb-6">
+                <p
+                class="text-3xl font-lavishly">
+                  Login Your Account :) 
+                </p>
+                <p
+                class="text-2xl font-semibold">
+                  Contact Us 
+                </p>
               </div>
-              <div class="text-center">
-                <p 
-                class="text-slate-100 font-medium text-sm mb-2">
-                  Welcome to Coffee Go
-                </p>
-                <p 
-                class="text-slate-100 font-medium text-xs mb-1">
-                  Your login request has send :) <br>
-                  click the button to closed
-                </p>
 
+              <div
+              class="grid grid-rows-3">
+                <label 
+                for="nama"
+                class="row-end-1">
+                  <input 
+                  placeholder="Masukkan Nama..." 
+                  id="nama" 
+                  type="text"
+                  pattern="^[A-Za-z\s]{3,}$"
+                  class="
+                  border-kopi border placeholder:text-sm p-2 rounded-lg
+                  invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
+                  focus:outline-none focus:ring-1 w-full peer">
+
+                  <p 
+                  class="
+                  text-sm text-pink-700 invisible 
+                  peer-invalid:visible">
+                    Format Nama Tidak Valid
+                  </p>
+                </label>
+
+                <label
+                for="email"
+                class="row-end-2">
+                  <input 
+                  placeholder="Masukkan Email..." 
+                  id="email" 
+                  type="email"
+                  class="
+                  border-kopi border placeholder:text-sm p-2 rounded-lg
+                  invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
+                  focus:outline-none focus:ring-1 w-full peer">
+
+                  <p 
+                  class="
+                  text-sm text-pink-700 invisible 
+                  peer-invalid:visible">
+                    Format Email Tidak Valid
+                  </p>
+                </label>
+
+                <label 
+                for="pesan"
+                class="row-start-2 row-end-4">
+                  <textarea
+                  placeholder="Pesan" 
+                  id="pesan" 
+                  type="text"
+                  pattern="^[A-Za-z\s]{3,}$"
+                  class="
+                  border-kopi border placeholder:text-sm p-2 rounded-lg
+                  focus:outline-none focus:ring-1 w-full peer h-full"></textarea>
+                </label>
+              </div>
+
+              <div class="flex justify-center mt-4 lg:mt-8 mb-4">
                 <button 
-                class="bg-indigo-600 text-slate-50 mt-3 text-xs py-1.5 w-11/12 px-2 font-medium rounded-sm"
-                popovertarget="terkirim">
-                  Close
+                popovertarget="terkirim"
+                id="btnKirim"
+                class="button">
+                  Submit
                 </button>
+              </div>
+
+              <div 
+              popover
+              id="terkirim"
+              anchor="btnKirim"
+              class="bg-kopi w-72 h-49 m-auto scale-125 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400">
+                <div
+                class="w-7.5 h-7.5 rounded-full bg-cream m-auto mt-6 mb-6 opacity-20">
+                </div>
+                <div class="text-center">
+                  <p 
+                  class="text-slate-100 font-medium text-sm mb-2">
+                    Welcome to Coffee Go
+                  </p>
+                  <p 
+                  class="text-slate-100 font-medium text-xs mb-1">
+                    Your login request has send :) <br>
+                    click the button to closed
+                  </p>
+
+                  <button 
+                  class="bg-cream text-kopi mt-3 text-xs py-1.5 w-11/12 px-2 font-medium rounded-sm"
+                  popovertarget="terkirim">
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>
