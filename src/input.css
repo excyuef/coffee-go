@@ -49,3 +49,37 @@
   @apply
     w-full h-full rounded-xl p-10 top-0
 }
+
+.matcha.active {
+  @apply
+    w-full h-full rounded-xl p-10 top-0
+}
+
+.matcha.active img {
+  @apply
+    scale-180
+}
+
+.americano.active {
+  @apply
+    w-full h-full rounded-xl top-0
+}
+
+.americano.active img {
+  @apply
+    scale-100 -mt-5
+}
+
+.guren.active {
+  @apply 
+    w-full h-full rounded-xl top-0
+}
+
+.guren.active img:first-child {
+  @apply
+    scale-80
+}
+.guren.active img:last-child {
+  @apply
+    scale-60
+}

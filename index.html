@@ -320,7 +320,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream md:w-86 w-full h-66 rounded-xl relative flex justify-center pt-32 overflow-x-clip">
               <div
-              class="w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 flex justify-center items-center hover:p-10 kopsu">
+              class="kopsu
+              w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 flex justify-center items-center hover:p-10">
                 <img 
                 class="aspect-square object-cover object-[25%_75%]"
                 src="images/product/kopsu.png" 
@@ -368,9 +369,10 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-daunkopi absolute -top-6 flex justify-center items-center overflow-hidden group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 hover:p-10">
+              class="matcha
+              w-32 h-32 rounded-full bg-daunkopi absolute -top-6 flex justify-center items-center overflow-hidden group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 hover:p-10">
                 <img 
-                class="h-24 absolute z-10 group-hover:scale-200 transition-all ease"
+                class="h-24 absolute z-10 group-hover:scale-200 transition-all ease matcha-active:scale-180"
                 src="images/product/matcha.png" 
                 alt="matcha">
                 <img 
@@ -412,9 +414,10 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-espresso absolute -top-6 pt-2 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 z-10">
+              class="americano
+              w-32 h-32 rounded-full bg-espresso absolute -top-6 pt-2 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 z-10">
                 <img 
-                class="aspect-square object-bottom object-cover scale-120 group-hover:scale-80 group-hover:-mt-10 transition-all ease"
+                class="aspect-square object-bottom object-cover scale-120 group-hover:scale-80 group-hover:-mt-10 transition-all ease americano-active:scale-100 americano-active:-mt-5"
                 src="images/product/americano.png" 
                 alt="americano">
               </div>
@@ -456,13 +459,14 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream w-full md:w-86 h-66 rounded-xl relative flex justify-center pt-32">
               <div
-              class="w-32 h-32 rounded-full bg-linear-to-t from-kopi to-susu absolute -top-6 p-2 flex justify-center items-center group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0">
+              class="guren
+              w-32 h-32 rounded-full bg-linear-to-t from-kopi to-susu absolute -top-6 p-2 flex justify-center items-center group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0">
                 <img 
-                class="absolute z-0 scale-120 group-hover:scale-80 transition-all ease"
+                class="absolute z-0 scale-120 group-hover:scale-80 guren-active:scale-80 transition-all ease"
                 src="images/element/element-splash.png" 
                 alt="bean">
                 <img
-                class="z-10 absolute scale-90 group-hover:scale-60 transition-all ease" 
+                class="z-10 absolute scale-90 group-hover:scale-60 guren-active:scale-60 transition-all ease" 
                 src="images/product/gula-aren.png" 
                 alt="kopi-gula-aren">
               </div>
@@ -829,9 +833,24 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
   </footer>
     <script>
     const kopsu = document.querySelector('.kopsu');
+    const matcha = document.querySelector('.matcha');
+    const americano = document.querySelector('.americano');
+    const guren = document.querySelector('.guren');
     
     kopsu.addEventListener('click', () => {
       kopsu.classList.toggle("active");
+    });
+
+    matcha.addEventListener('click', () => {
+      matcha.classList.toggle("active");
+    });
+
+    americano.addEventListener('click', () => {
+      americano.classList.toggle("active");
+    });
+
+    guren.addEventListener('click', () => {
+      guren.classList.toggle("active");
     });
     
     const faqs = document.querySelectorAll('.faq');
