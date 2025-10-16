@@ -790,23 +790,28 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
               popover
               id="terkirim"
               anchor="btnKirim"
-              class="bg-kopi w-72 h-49 m-auto scale-125 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400">
+              class="bg-kopi m-auto scale-125 lg:scale-150 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400 pt-6 px-3 pb-3">
                 <div
-                class="w-7.5 h-7.5 rounded-full bg-cream m-auto mt-6 mb-6 opacity-20">
+                class="px-12">
+                  <div
+                  class="aspect-square h-10 rounded-full bg-cream m-auto mb-3 opacity-20">
+                  </div>
+
+                  <div class="text-center">
+                    <p 
+                    class="text-slate-100 font-semibold mb-3">
+                      Welcome to Coffee Go
+                    </p>
+                    <p 
+                    class="text-slate-100 font-medium text-xs mb-5">
+                      Pesan kamu sudah terkirim :) <br>
+                      click the button to closed
+                    </p>
+                    </div>
                 </div>
-                <div class="text-center">
-                  <p 
-                  class="text-slate-100 font-medium text-sm mb-2">
-                    Welcome to Coffee Go
-                  </p>
-                  <p 
-                  class="text-slate-100 font-medium text-xs mb-1">
-                    Your login request has send :) <br>
-                    click the button to closed
-                  </p>
 
                   <button 
-                  class="bg-cream text-kopi mt-3 text-xs py-1.5 w-11/12 px-2 font-medium rounded-sm"
+                  class="bg-cream text-kopi text-xs py-1.5 px-2 font-semibold rounded-sm w-full"
                   popovertarget="terkirim">
                     Close
                   </button>
