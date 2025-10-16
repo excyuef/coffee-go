@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html 
-class="scroll-smooth"
 lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,11 +18,11 @@ lang="en">
   <title>Coffee Go</title>
 
   <style>
-  /* small helper for smooth height animation */
-  .collapsing {
-  transition: height 280ms cubic-bezier(.4,0,.2,1);
-  overflow: hidden;
-  }
+    /* small helper for smooth height animation */
+    .collapsing {
+    transition: height 280ms cubic-bezier(.4,0,.2,1);
+    overflow: hidden;
+    }
   </style>
 </head>
 <body
@@ -62,13 +61,19 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
       </a>
       <a 
       class="nav-link"
-      href="#">
+      href="#menu"
+      id="menuLink">
         Menu
       </a>
       <a 
       class="nav-link mr-0"
-      href="#">
-        Contact Us
+      href="#faq">
+        FAQ
+      </a>
+      <a 
+      class="nav-link mr-0"
+      href="#benefits">
+        Benefits
       </a>
     </div>
 
@@ -176,7 +181,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
     </section>
 
     <section
-    class="mt-26 flex flex-col sm:flex-row lg:px-24 xl:px-48 mb-24 p-4">
+    class="mt-26 flex flex-col sm:flex-row lg:px-24 xl:px-48 mb-24 p-4 scroll-m-20"
+    id="benefits">
       <div 
       class="container relative w-full flex items-center justify-center">
         <div
@@ -287,7 +293,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
     </section>
 
     <section
-    class="p-4 lg:px-24">
+    class="p-4 lg:px-24 scroll-m-28"
+    id="menu">
       <div
       class="bg-white rounded-2xl border-8 border-white w-full mx-auto">
         <div
@@ -313,7 +320,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
             <div
             class="bg-cream md:w-86 w-full h-66 rounded-xl relative flex justify-center pt-32 overflow-x-clip">
               <div
-              class="w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 flex justify-center items-center hover:p-10">
+              class="w-32 h-32 rounded-full bg-kopi absolute -top-6 p-1 z-10 group transition-all ease group hover:w-full hover:h-full hover:rounded-xl hover:top-0 flex justify-center items-center hover:p-10 kopsu">
                 <img 
                 class="aspect-square object-cover object-[25%_75%]"
                 src="images/product/kopsu.png" 
@@ -492,7 +499,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
     </section>
 
     <section 
-    class="w-full p-4 lg:px-24 mt-24">
+    class="w-full p-4 lg:px-24 mt-24"
+    id="faq">
       <div
       class="bg-white pt-6 pb-12 px-6 lg:px-10 rounded-2xl">
         <div>
@@ -509,7 +517,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
         <div
         class="flex flex-col lg:flex-row gap-12">
           <div
-          class="space-y-4 lg:w-7/12 w-full">
+          class="space-y-4 lg:w-7/12 w-full flex flex-col justify-between">
             <details 
             class="faq rounded-xl bg-cream shadow-sm p-4 overflow-hidden">
 
@@ -699,21 +707,21 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
           <div class="w-full lg:w-5/12">
 
             <div
-            class="border-2 border-kopi rounded-2xl text-left bg-cream px-5 pt-5 h-full">
+            class="rounded-2xl text-left bg-cream p-7 h-full">
               <div
               class="mb-6">
                 <p
                 class="text-3xl font-lavishly">
-                  Login Your Account :) 
+                  Get More Update
                 </p>
                 <p
                 class="text-2xl font-semibold">
-                  Contact Us 
+                  Send Us a Massage
                 </p>
               </div>
 
               <div
-              class="grid grid-rows-3">
+              class="grid grid-rows-3 gap-1">
                 <label 
                 for="nama"
                 class="row-end-1">
@@ -725,7 +733,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                   class="
                   border-kopi border placeholder:text-sm p-2 rounded-lg
                   invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
-                  focus:outline-none focus:ring-1 w-full peer">
+                  focus:outline-none focus:ring-1 w-full peer mb-1">
 
                   <p 
                   class="
@@ -745,7 +753,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                   class="
                   border-kopi border placeholder:text-sm p-2 rounded-lg
                   invalid:border-pink-700 invalid:ring-pink-700 invalid:border-none
-                  focus:outline-none focus:ring-1 w-full peer">
+                  focus:outline-none focus:ring-1 w-full peer mb-1">
 
                   <p 
                   class="
@@ -815,15 +823,20 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
 
   </footer>
     <script>
-    // Ambil semua elemen <details>
+    const kopsu = document.querySelector('.kopsu');
+    
+    kopsu.addEventListener('click', () => {
+      kopsu.classList.toggle("active");
+    });
+    
     const faqs = document.querySelectorAll('.faq');
 
     faqs.forEach((faq) => {
-      const summary = faq.querySelector('summary');   // tombol ringkasan (yang diklik)
-      const content = faq.querySelector('.content');   // isi yang dianimasikan
-      const icon = summary.querySelector('svg');       // ikon panah
+      const summary = faq.querySelector('summary'); 
+      const content = faq.querySelector('.content');  
+      const icon = summary.querySelector('svg');      
 
-      // Matikan perilaku default browser agar kita bisa kendalikan buka/tutup manual
+      // Matiin perilaku default browser
       summary.addEventListener('click', (e) => {
         e.preventDefault(); // mencegah <details> langsung buka/tutup otomatis
 
