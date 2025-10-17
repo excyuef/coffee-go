@@ -67,7 +67,7 @@
 
 .americano.active img {
   @apply
-    scale-100 -mt-5
+    scale-100
 }
 
 .guren.active {
