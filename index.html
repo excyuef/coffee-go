@@ -4,14 +4,15 @@ lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/icon/logo.png" />
 
   <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lavishly+Yours&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lavishly+Yours&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Stylesheet links And Scripts-->
   <link href="./src/output.css" rel="stylesheet">
@@ -26,19 +27,26 @@ lang="en">
   </style>
 </head>
 <body
-class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
+class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
   <nav
-  class="flex justify-between sm:justify-center p-4 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-white">
+  class="flex justify-between sm:justify-center p-4 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-white border-b-2 border-gray-300 lg:py-6">
     <div>
-      <p 
-      class="font-bold italic text-dark absolute left-4 lg:left-25 lg:text-xl top-4 text-kopi">
-        coffee<span
-      class="text-daunkopi">Go</span>.
-      </p>
-    
+      <div
+      class="absolute left-4 lg:left-25 lg:text-xl flex flex-row gap-2 items-center">
+        <img 
+        class="aspect-square w-6 sm:w-8 object-center object-cover"
+        src="/images/icon/logo.png" 
+        alt="logo">
+        <p 
+        class="font-bold italic text-kopi">
+          coffee<span
+        class="text-daunkopi">Go</span>.
+        </p>
+      </div>
     </div>
+
     <div
-    class="absolute top-0 -right-full w-40 sm:w-auto h-screen duration-300 sm:static sm:h-auto sm:bg-inherit rounded-l-lg bg-white text-espresso transition-all"
+    class="absolute top-0 -right-full w-50 sm:w-auto h-screen duration-300 sm:static sm:h-auto sm:bg-inherit rounded-l-lg bg-white text-espresso transition-all"
     id="link">
       <div
       class="flex flex-row justify-between p-3 font-semibold sm:hidden">
@@ -57,7 +65,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
       <a 
       class="nav-link"
       href="#">
-        Home
+        Beranda
       </a>
       <a 
       class="nav-link"
@@ -317,6 +325,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
         class="flex flex-row gap-4 md:gap-5 lg:gap-8 overflow-x-auto w-auto py-8 px-8 md:px-5 snap-mandatory snap-x">
           <div
           class="w-full md:w-auto snap-center shrink-0 pt-10 lg:scale-105">
+            
             <div
             class="bg-cream md:w-86 w-full h-66 rounded-xl relative flex justify-center pt-32 overflow-x-clip">
               <div
@@ -352,7 +361,9 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-kopi hover:text-cream transition-all ease duration-400">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-kopi hover:text-cream transition-all ease duration-400"
+                  id="order-kopsu"
+                  popovertarget="popover-order">
                     Order Now
                   </button>
                   <button
@@ -360,6 +371,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -397,7 +409,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-daunkopi hover:text-cream transition-all ease duration-400">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-daunkopi hover:text-cream transition-all ease duration-400"
+                  popovertarget="popover-order">
                     Order Now
                   </button>
                   <button
@@ -442,7 +455,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4 absolute">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-espresso hover:text-cream transition-all ease duration-400">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-espresso hover:text-cream transition-all ease duration-400"
+                  popovertarget="popover-order">
                     Order Now
                   </button>
                   <button
@@ -487,7 +501,8 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                 <div
                 class="w-full flex items-center justify-between px-4 text-sm">
                   <button
-                  class="bg-white px-3 py-3 rounded-4xl font-semibold hover:bg-kopi hover:text-cream transition-all ease duration-400">
+                  class="bg-white px-3 py-3 rounded-4xl font-semibold hover:bg-kopi hover:text-cream transition-all ease duration-400"
+                  popovertarget="popover-order">
                     Order Now
                   </button>
                   <button
@@ -794,11 +809,15 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
               popover
               id="terkirim"
               anchor="btnKirim"
-              class="bg-kopi m-auto scale-125 lg:scale-150 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400 pt-6 px-3 pb-3">
+              class="bg-kopi m-auto scale-120 lg:scale-150 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400 pt-6 px-3 pb-3">
                 <div
                 class="px-12">
                   <div
-                  class="aspect-square h-10 rounded-full bg-cream m-auto mb-3 opacity-20">
+                  class="aspect-square h-10 rounded-full bg-cream m-auto mb-3 flex items-center justify-center">
+                    <img
+                    class="aspect-square w-7 object-center object-cover" 
+                    src="/images/icon/logo.png" 
+                    alt="logo">
                   </div>
 
                   <div class="text-center">
@@ -811,7 +830,7 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
                       Pesan kamu sudah terkirim :) <br>
                       click the button to closed
                     </p>
-                    </div>
+                  </div>
                 </div>
 
                   <button 
@@ -827,10 +846,128 @@ class="bg-cream pt-18 pb-150 font-poppins md:pt-26 text-kopi">
       </div>
     </section>
   </main>
+  <div 
+    popover
+    id="popover-order"
+    anchor="order-kopsu"
+    class="bg-kopi m-auto scale-120 lg:scale-150 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400 pt-6 px-3 pb-3">
+      <div
+      class="px-6">
+        <div class="text-center">
+          <p 
+          class="text-slate-100 font-semibold mb-3 text-lg">
+            Pengen order? <br> <span
+            class="text-xs">silahkan scan QR code ini</span>
+          </p>
+          <p 
+          class="text-slate-100 font-medium text-xs mb-5">
+            saat ini kami hanya menerima <br>
+            pesanan melalui WhatsApp, <br>
+            selamat menikmati :)
+          </p>
+        </div>
+      </div>
 
-  <footer>
+        <button 
+        class="bg-cream text-kopi text-xs py-1.5 px-2 font-semibold rounded-sm w-full"
+        popovertarget="popover-order">
+          Close
+        </button>
+      </div>
+    </div>
 
+  <footer 
+  class="bg-kopi text-cream py-10 mt-20 rounded-t-xl">
+    <div 
+    class="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Brand -->
+      <div>
+        <p 
+        class="font-bold italic lg:left-25 text-xl mb-3">
+          coffee<span
+        class="text-daunkopi">Go</span>.
+        </p>
+        <p class="text-sm">
+          "Menjual kopi dengan kualitas tinggi"
+        </p>
+      </div>
+
+      <div>
+        <h3 
+        class="text-white font-semibold mb-3">Navigasi</h3>
+        <ul 
+        class="space-y-2">
+          <li>
+            <a 
+            href="#" 
+            class="hover:text-white transition">
+              Beranda
+            </a>
+          </li>
+
+          <li>
+            <a 
+            href="#menu" 
+            class="hover:text-white transition">
+              Menu
+            </a>
+          </li>
+
+          <li>
+            <a 
+            href="#faq" 
+            class="hover:text-white transition">
+              FAQ
+            </a>
+          </li>
+
+          <li>
+            <a 
+            href="#benefits" 
+            class="hover:text-white transition">
+              Benefits
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold mb-3">Sumber Daya</h3>
+        <ul class="space-y-2">
+          <li>
+            <a 
+            href="#" 
+            class="hover:text-white transition">
+              Blog
+            </a>
+          </li>
+
+          <li>
+            <a 
+            href="#" 
+            class="hover:text-white transition">
+              Kebijakan Privasi
+            </a>
+          </li>
+
+          <li>
+            <a 
+            href="#" 
+            class="hover:text-white transition">
+            Syarat & Ketentuan
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-cream mt-10 pt-6 text-center text-sm">
+      © 2025 BrandName. All rights reserved.
+    </div>
   </footer>
+
     <script>
     const kopsu = document.querySelector('.kopsu');
     const matcha = document.querySelector('.matcha');
