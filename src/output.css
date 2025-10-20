@@ -43,6 +43,7 @@
     --radius-4xl: 2rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --animate-spin: spin 1s linear infinite;
     --blur-xl: 24px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -358,8 +359,14 @@
   .mb-24 {
     margin-bottom: calc(var(--spacing) * 24);
   }
+  .mb-28 {
+    margin-bottom: calc(var(--spacing) * 28);
+  }
   .mb-32 {
     margin-bottom: calc(var(--spacing) * 32);
+  }
+  .mb-48 {
+    margin-bottom: calc(var(--spacing) * 48);
   }
   .flex {
     display: flex;
@@ -376,8 +383,23 @@
   .aspect-square {
     aspect-ratio: 1 / 1;
   }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-1\/2 {
+    height: calc(1/2 * 100%);
+  }
+  .h-2 {
+    height: calc(var(--spacing) * 2);
+  }
+  .h-2\/3 {
+    height: calc(2/3 * 100%);
+  }
   .h-4 {
     height: calc(var(--spacing) * 4);
+  }
+  .h-4\/5 {
+    height: calc(4/5 * 100%);
   }
   .h-5 {
     height: calc(var(--spacing) * 5);
@@ -432,6 +454,24 @@
   }
   .max-h-0 {
     max-height: calc(var(--spacing) * 0);
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-1\/2 {
+    width: calc(1/2 * 100%);
+  }
+  .w-2 {
+    width: calc(var(--spacing) * 2);
+  }
+  .w-2\/3 {
+    width: calc(2/3 * 100%);
+  }
+  .w-4 {
+    width: calc(var(--spacing) * 4);
+  }
+  .w-4\/5 {
+    width: calc(4/5 * 100%);
   }
   .w-5 {
     width: calc(var(--spacing) * 5);
@@ -504,6 +544,9 @@
   }
   .animate-muncul {
     animation: var(--animate-muncul);
+  }
+  .animate-spin {
+    animation: var(--animate-spin);
   }
   .cursor-pointer {
     cursor: pointer;
@@ -1418,6 +1461,11 @@
       margin-top: calc(var(--spacing) * 48);
     }
   }
+  .md\:mb-48 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 48);
+    }
+  }
   .md\:h-7 {
     @media (width >= 48rem) {
       height: calc(var(--spacing) * 7);
@@ -1983,6 +2031,11 @@
   syntax: "*";
   initial-value: "";
   inherits: false;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes muncul {
   0% {
