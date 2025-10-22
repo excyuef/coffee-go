@@ -535,6 +535,149 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
       </div>
     </section>
 
+    <section
+    class="w-full p-4 lg:px-24 mt-24"
+    data-aos="fade-in">
+      <div
+      class="bg-[url(/images/hero/testi.jpg)] w-full pt-64 rounded-2xl bg-cover bg-right md:flex md:flex-row md:pt-0 overflow-hidden">
+        <div
+        class="relative w-full md:w-1/2 overflow-hidden bg-white rounded-2xl"
+        data-aos="fade-right"
+        data-aos-delay="250">
+
+          <div 
+          id="slides" 
+          class="flex transition-transform duration-500 ease-in-out">
+            
+            <div 
+            class="w-full flex-shrink-0 px-20 py-8 md:py-18 md:px-24 flex flex-col gap-6">
+              <p
+              class="text-9xl font-extrabold h-8">
+                "
+              </p>
+              <p 
+              class="text-espresso italic font-bold md:text-lg lg:text-xl">
+                "Kopinya enak banget! Aromanya kuat tapi tetap lembut di lidah. Pengiriman cepat, kemasan rapi, dan rasanya selalu konsisten setiap kali saya pesan."
+              </p>
+
+              <div
+              class="flex flex-row items-center gap-2">
+                <img 
+                src="https://i.pravatar.cc/80?img=1" 
+                alt="Customer 1" 
+                class="w-12 h-12 rounded-full lg:w-14 lg:h-14">
+                <h3 
+                class="font-semibold text-espresso text-sm lg:text-base">
+                  Widi <br>
+                  <span
+                  class="text-xs text-espresso/60 lg:text-sm">
+                    Satpam
+                  </span>
+                </h3>
+              </div>
+            </div>
+
+            <div 
+            class="w-full flex-shrink-0 px-20 py-8 md:py-18 md:px-24 flex flex-col gap-6">
+              <p
+              class="text-9xl font-extrabold h-8">
+                "
+              </p>
+              <p 
+              class="text-espresso italic font-bold md:text-lg lg:text-xl">
+                “Pelayanan ramah dan cepat. Saya direkomendasikan varian yang pas banget dengan selera saya — rasanya seimbang dan aromanya bikin nagih.”
+              </p>
+
+              <div
+              class="flex flex-row items-center gap-2">
+                <img 
+                src="https://i.pravatar.cc/80?img=1" 
+                alt="Customer 1" 
+                class="w-12 h-12 rounded-full lg:w-14 lg:h-14">
+                <h3 
+                class="font-semibold text-espresso text-sm lg:text-base">
+                  Widi <br>
+                  <span
+                  class="text-xs text-espresso/60 lg:text-sm">
+                    Satpam
+                  </span>
+                </h3>
+              </div>
+            </div>
+
+            <div 
+            class="w-full flex-shrink-0 px-20 py-8 md:py-18 md:px-24 flex flex-col gap-6">
+              <p
+              class="text-9xl font-extrabold h-8">
+                "
+              </p>
+              <p 
+              class="text-espresso italic font-bold md:text-lg lg:text-xl">
+                “Varian kopi Nusantara-nya wangi banget dan rasanya khas. Proses pesannya mudah, pengirimannya juga cepat. Pasti repeat order lagi!”
+              </p>
+
+              <div
+              class="flex flex-row items-center gap-2">
+                <img 
+                src="https://i.pravatar.cc/80?img=1" 
+                alt="Customer 1" 
+                class="w-12 h-12 rounded-full lg:w-14 lg:h-14">
+                <h3 
+                class="font-semibold text-espresso text-sm lg:text-base">
+                  Widi <br>
+                  <span
+                  class="text-xs text-espresso/60 lg:text-sm">
+                    Satpam
+                  </span>
+                </h3>
+              </div>
+            </div>
+
+            <div 
+            class="w-full flex-shrink-0 px-20 py-8 md:py-18 md:px-24 flex flex-col gap-6">
+              <p
+              class="text-9xl font-extrabold h-8">
+                "
+              </p>
+              <p 
+              class="text-espresso italic font-bold md:text-lg lg:text-xl">
+                “Kopinya punya karakter unik, kaya rasa dan bikin semangat. Setiap cangkirnya terasa dibuat dengan penuh perhatian.”
+              </p>
+
+              <div
+              class="flex flex-row items-center gap-2">
+                <img 
+                src="https://i.pravatar.cc/80?img=1" 
+                alt="Customer 1" 
+                class="w-12 h-12 rounded-full lg:w-14 lg:h-14">
+                <h3 
+                class="font-semibold text-espresso text-sm lg:text-base">
+                  Widi <br>
+                  <span
+                  class="text-xs text-espresso/60 lg:text-sm">
+                    Satpam
+                  </span>
+                </h3>
+              </div>
+            </div>          
+          </div>
+
+          <button 
+          id="prev" 
+          class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-kopi hover:bg-espresso rounded-full px-3.5 py-1.5 text-cream transition-all">
+            &#10094;
+          </button>
+
+          <button 
+          id="next" 
+          class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-kopi hover:bg-espresso rounded-full px-3.5 py-1.5 text-cream transition-all">
+            &#10095;
+          </button>
+        </div>
+      </div>
+    
+    </section>
+
     <section 
     class="w-full p-4 lg:px-24 mt-24"
     id="faq">
@@ -1007,6 +1150,25 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
   </footer>
 
     <script>
+    const slides = document.getElementById("slides");
+    const totalSlides = slides.children.length;
+    let currentIndex = 0;
+
+    document.getElementById("next")
+      .addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+
+    document.getElementById("prev")
+      .addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+
+
+
+
     const kopsu = document.querySelector('.kopsu');
     const matcha = document.querySelector('.matcha');
     const americano = document.querySelector('.americano');
