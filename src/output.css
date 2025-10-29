@@ -1663,7 +1663,6 @@
 .nav-link {
   margin-bottom: calc(var(--spacing) * 1);
   display: block;
-  text-align: center;
   font-size: var(--text-lg);
   line-height: var(--tw-leading, var(--text-lg--line-height));
   --tw-font-weight: var(--font-weight-semibold);
