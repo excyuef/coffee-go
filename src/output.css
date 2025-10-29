@@ -1662,6 +1662,7 @@
 }
 .nav-link {
   margin-bottom: calc(var(--spacing) * 1);
+  margin-left: calc(var(--spacing) * 3);
   display: block;
   font-size: var(--text-lg);
   line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -1715,6 +1716,9 @@
   }
   @media (width >= 40rem) {
     margin-bottom: calc(var(--spacing) * 0);
+  }
+  @media (width >= 40rem) {
+    margin-left: calc(var(--spacing) * 0);
   }
   @media (width >= 40rem) {
     display: inline-block;

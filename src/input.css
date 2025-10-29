@@ -37,7 +37,7 @@
 .nav-link {
   @apply
     hover:text-kopi after:border-b-2 after:scale-0 after:block hover:after:scale-80 transition-all after:duration-600 ease-in block sm:inline-block sm:mr-3 text-espresso mb-1 sm:mb-0
-    font-semibold text-lg
+    font-semibold text-lg ml-3 sm:ml-0
 }
 
 .button {
