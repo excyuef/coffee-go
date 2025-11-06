@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lavishly+Yours&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet links And Scripts-->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="./src/output.css" rel="stylesheet">
+  <title>Coffee Go</title>
+</head>
+<body
+class="bg-cream pt-20 font-poppins md:pt-26 text-kopi pb-1024">
+
+  <nav
+  class="flex justify-between sm:justify-center p-4 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-white border-b-2 border-gray-300 lg:py-6">
+    <div>
+      <div
+      class="absolute left-4 lg:left-25 lg:text-xl flex flex-row gap-2 items-center">
+        <img 
+        class="aspect-square w-6 sm:w-8 object-center object-cover"
+        src="/images/icon/logo.png" 
+        alt="logo">
+        <p 
+        class="font-bold italic text-kopi">
+          coffee<span
+        class="text-daunkopi">Go</span>.
+        </p>
+      </div>
+    </div>
+
+    <div
+    class="absolute top-0 -right-full w-50 sm:w-auto h-screen duration-300 sm:static sm:h-auto sm:bg-inherit rounded-l-lg bg-white text-espresso transition-all"
+    id="link">
+      <div
+      class="flex flex-row justify-between p-3 font-semibold sm:hidden">
+        <p
+        class="text-md hover:text-kopi transition-all ease">
+          Navigation
+        </p>
+        <button 
+        class="text-right"
+        id="exit">
+          <i
+          class="hover:text-kopi transition-all ease" 
+          data-feather="x"></i>
+        </button>
+      </div>
+      <a 
+      class="nav-link"
+      href="#">
+        Beranda
+      </a>
+      <a 
+      class="nav-link"
+      href="cart.html">
+        Keranjang
+      </a>
+      <a 
+      class="nav-link"
+      href="#menu"
+      id="menuLink">
+        Menu
+      </a>
+      <a 
+      class="nav-link mr-0"
+      href="#faq">
+        FAQ
+      </a>
+      <a 
+      class="nav-link mr-0"
+      href="#benefits">
+        Benefits
+      </a>
+    </div>
+
+    <div
+    class="sm:hidden text-espresso"
+    id="hamburger">
+      <i class="hover:text-kopi transition-all ease"
+      data-feather="menu"></i>
+    </div>
+  </nav>
+
+  <main>
+    <section
+    class="w-full lg:px-24 flex flex-col px-6 cart gap-4">
+    <p
+    class="font-semibold text-xl mb-3">
+      Review Your Order
+    </p>
+
+
+    </section>
+  </main>
+
+  <script type="module" src="./scripts/cartPage.js"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./scripts/header.js"></script>
+</body>
+</html>

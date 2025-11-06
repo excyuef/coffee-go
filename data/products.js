@@ -1,23 +1,26 @@
-let cart  = [{
-  nama:"kopi susu",
-  id: "id1",
-  quantity: 0,
-},
-  
+export let products  = [
   {
-  nama:"matcha",
-  id: "id2",
-  quantity: 0,
-},
-
+    id: "id1",
+    image: "images/product/kopsu.png",
+    name: "Kopi Susu",
+    rupiah: '8.000,00',
+  },
   {
-  nama:"americano",
-  id: "id3",
-  quantity: 0,
-},
-
+    id: "id2",
+    image: "images/product/matcha.png",
+    name: "Matcha",
+    rupiah: '8.000,00',
+  },
   {
-  nama:"kopi susu gula aren",
-  id: "id4",
-  quantity: 0,
-}];
+    id: "id3",
+    image: "images/product/americano.png",
+    name: "Americano",
+    rupiah: '8.000,00',
+  },
+  {
+    id: "id4",
+    image: "images/product/gula-aren.png",
+    name: "Gula Aren",
+    rupiah: '10.000,00',
+  }
+];

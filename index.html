@@ -21,7 +21,7 @@ lang="en">
 
   <style>
     /* small helper for smooth height animation */
-    .collapsing {
+    .collapsing { 
     transition: height 280ms cubic-bezier(.4,0,.2,1);
     overflow: hidden;
     }
@@ -67,6 +67,11 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
       class="nav-link"
       href="#">
         Beranda
+      </a>
+      <a 
+      class="nav-link"
+      href="cart.html">
+        Keranjang
       </a>
       <a 
       class="nav-link"
@@ -382,7 +387,8 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400">
+                  class="bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400 js-add-yo-cart js-add-to-cart"
+                  data-product-id="id1">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -1149,106 +1155,9 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
     </div>
   </footer>
 
-    <script>
-    const slides = document.getElementById("slides");
-    const totalSlides = slides.children.length;
-    let currentIndex = 0;
-
-    document.getElementById("next")
-      .addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-      });
-
-    document.getElementById("prev")
-      .addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-      });
-
-
-
-
-    const kopsu = document.querySelector('.kopsu');
-    const matcha = document.querySelector('.matcha');
-    const americano = document.querySelector('.americano');
-    const guren = document.querySelector('.guren');
-    
-    kopsu.addEventListener('click', () => {
-      kopsu.classList.toggle("active");
-    });
-
-    matcha.addEventListener('click', () => {
-      matcha.classList.toggle("active");
-    });
-
-    americano.addEventListener('click', () => {
-      americano.classList.toggle("active");
-    });
-
-    guren.addEventListener('click', () => {
-      guren.classList.toggle("active");
-    });
-    
-    const faqs = document.querySelectorAll('.faq');
-
-    faqs.forEach((faq) => {
-      const summary = faq.querySelector('summary'); 
-      const content = faq.querySelector('.content');  
-      const icon = summary.querySelector('svg');      
-
-      summary.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        if (faq.hasAttribute('open')) {
-          closeFaq(faq, content, icon);
-        } else {
-          openFaq(faq, content, icon);
-        }
-      });
-    });
-
-    function openFaq(faq, content, icon) {
-      faq.setAttribute('open', 'true');
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.style.opacity = '1';
-      icon.style.transform = 'rotate(180deg)';
-
-      content.addEventListener('transitionend', function handler(e) {
-        if (e.propertyName === 'max-height') {
-          content.style.maxHeight = 'none';
-          content.removeEventListener('transitionend', handler);
-        }
-      });
-    }
-
-    function closeFaq(faq, content, icon) {
-
-      content.style.maxHeight = content.scrollHeight + 'px';
-      content.offsetHeight; 
-      content.style.maxHeight = '0px';
-      content.style.opacity = '0';
-      icon.style.transform = 'rotate(0deg)';
-
-      content.addEventListener('transitionend', function handler(e) {
-        if (e.propertyName === 'max-height') {
-          faq.removeAttribute('open');
-          content.removeEventListener('transitionend', handler);
-        }
-      });
-    }
-  </script>
+  <script type="module" src="./scripts/index.js"></script>
   <script src="https://unpkg.com/feather-icons"></script>
   <script src="./scripts/header.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    AOS.init({
-        once: false,
-        delay: 100,
-        duration: 500,
-    });
-  </script>
 </body>
 </html>
