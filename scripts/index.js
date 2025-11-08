@@ -16,8 +16,6 @@ feather.replace();
 
 //ini buat externall resource
 
-console.log(cart);
-
 const slides = document.getElementById("slides");
 const totalSlides = slides.children.length;
 let currentIndex = 0;

@@ -29,11 +29,12 @@ cart.forEach( cartItem => {
   
   const isText = matchingItem.text;
   const isScale = matchingItem.scale;
+  const isClass = cartItem.class;
 
   cartSummaryHTML += 
   ` 
     <div
-    class="container-${matchingItem.id}
+    class="container-${matchingItem.id} ${isClass ? 'hidden' : ''}
     h-68 border ${matchingItem.bg} rounded-2xl">
       <div
       class="w-full md:w-auto"

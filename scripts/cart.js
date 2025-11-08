@@ -1,4 +1,13 @@
 export let cart = JSON.parse(localStorage.getItem('cart'));
+  if (!cart) {
+    cart = [
+        { 
+          productId: 'id5',
+          quantity: 0,
+          class: true
+        }
+      ]
+  }
 
 export function saveToLocalStorage () {
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -7,9 +16,11 @@ export function saveToLocalStorage () {
 export function updateCartQuantity () {
   let cartQuantity = 0;
 
-  cart.forEach((cartItem) => {
-    cartQuantity += cartItem.quantity;
-  });
+  if (cart) {
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+  }
 
   document.querySelector(".js-cart-quantity")
     .innerHTML = cartQuantity;

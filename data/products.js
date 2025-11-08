@@ -34,5 +34,14 @@ export let products  = [
     element: 'images/element/element-splash.png',
     bg: 'bg-linear-to-t from-kopi to-susu',
     scale: 'scale-220'
+  },
+  {
+    id: "id5",
+    image: "images/product/gula-aren.png",
+    name: "Gula Aren",
+    rupiah: '10.000,00',
+    element: 'images/element/element-splash.png',
+    bg: 'bg-linear-to-t from-kopi to-susu',
+    scale: 'scale-220'
   }
 ];
