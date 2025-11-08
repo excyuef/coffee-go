@@ -1,4 +1,8 @@
-import { addToCart, cart } from "./cart.js";
+import { 
+  addToCart, 
+  cart,
+  updateCartQuantity 
+} from "./cart.js";
 
 AOS.init();
 
@@ -29,9 +33,6 @@ document.getElementById("prev")
     currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
   });
-
-
-
 
 const kopsu = document.querySelector('.kopsu');
 const matcha = document.querySelector('.matcha');
@@ -104,13 +105,13 @@ function closeFaq(faq, content, icon) {
 
 // cart
 
+updateCartQuantity();
+
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', () => {
       const {productId} = button.dataset;
       addToCart(productId);
-      // check number in cart display
-      // updateCartQuantity();
-      // visible the text green add
+      updateCartQuantity();
     });
   });

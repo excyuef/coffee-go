@@ -1,5 +1,9 @@
 import { products } from '../data/products.js' 
-import { cart } from './cart.js';
+import { 
+  cart,
+  removeFromCart,
+  updateQuantity
+} from './cart.js';
 
 AOS.init();
 
@@ -22,37 +26,40 @@ cart.forEach( cartItem => {
       matchingItem = product;
     }
   });
-  console.log(matchingItem);
+  
+  const isText = matchingItem.text;
+  const isScale = matchingItem.scale;
+
   cartSummaryHTML += 
   ` 
     <div
-    class="h-68 border bg-daunkopi rounded-2xl">
+    class="container-${matchingItem.id}
+    h-68 border ${matchingItem.bg} rounded-2xl">
       <div
       class="w-full md:w-auto"
       data-aos="zoom-in">
         <div
-        class="rounded-xl flex flex-row px-4 items-center h-68">
+        class="rounded-xl flex flex-row px-4 items-center h-68 overflow-hidden">
           <div
-          class="w-full h-full rounded-2xl flex justify-center items-center group transition-all ease group relative">
+          class="w-full h-full flex justify-center items-center group transition-all ease group relative">
             <img 
-            class="h-24 absolute scale-160 group-hover:scale-200 transition-all ease"
+            class="h-24 absolute ${isScale ? isScale : 'scale-180'} z-10 group-hover:scale-200 transition-all ease"
             src="${matchingItem.image}">
             <img 
-            class="absolute h-32 w-32 scale-160 object-cover group-hover:scale-200 transition-all ease"
-            src="images/element/matcha/daun-matcha.png">
+            class="absolute h-32 w-32 scale-200 object-cover group-hover:scale-250 transition-all ease"
+            src="${matchingItem.element}">
           </div>
           <div
-          class="w-full h-60 font-semibold text-susu py-4 px-4 flex flex-col justify-between bg-black/10 rounded-xl">
+          class="w-full h-60 font-semibold ${isText ? 'text-espresso' : 'text-susu'} py-4 px-4 flex flex-col justify-between bg-black/10 rounded-xl">
             <div>
               <p
               class="text-xl mb-2">
               ${matchingItem.name}
               </p>
               <p
-              class="text-xs mb-5">
+              class="text-xs m b-5">
                 Rp. ${matchingItem.rupiah} 
-                <span
-                class="text-susu/50">
+                <span>
                   <s>Rp. 15.000,00</s>
                 </span>
               </p>
@@ -65,27 +72,34 @@ cart.forEach( cartItem => {
                 </p>
                 <div
                 class="flex flex-row gap-3">
-                  <button>
+                  <button
+                  class="js-decrease-quantity"
+                  data-product-id="${matchingItem.id}">
                     -
                   </button>
-                  <p>
+                  <p
+                  class="js-quantity-label-${matchingItem.id}">
                     ${cartItem.quantity}
                   </p>
-                  <button>
+                  <button
+                  class="js-increase-quantity"
+                  data-product-id="${matchingItem.id}">
                     +
                   </button>
                 </div>
               </div>
             </div>
             <div
-              class="w-full flex items-center justify-between text-daunkopi">
+              class="w-full flex items-center justify-between text-espresso">
                 <button
-                class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm hover:bg-daunkopi hover:text-cream transition-all ease duration-400"
+                class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm transition-all ease hover:scale-110"
                 popovertarget="popover-order">
                   Buy Now
                 </button>
                 <button
-                class="bg-white rounded-full py-2 px-4 transition-all ease duration-400 text-xl">
+                class="js-delete-cart
+                bg-white rounded-full py-2 px-4 transition-all ease text-xl hover:scale-110"
+                data-product-id="${matchingItem.id}">
                   X
                 </button>
               </div>
@@ -97,6 +111,77 @@ cart.forEach( cartItem => {
     </div>
   `
 });
-console.log(cartSummaryHTML);
 document.querySelector('.cart')
   .innerHTML = cartSummaryHTML;   
+
+updateCartQuantity();
+
+document.querySelectorAll('.js-delete-cart')
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      const {productId} = button.dataset;
+
+      removeFromCart(productId);
+
+      const container = document.querySelector(`.container-${productId}`);
+
+      container.remove();
+      updateCartQuantity();
+    })
+  })
+console.log(cart);
+
+document.querySelectorAll('.js-increase-quantity')
+  .forEach((link) => {
+    link.addEventListener('click', () => {
+      const {productId} = link.dataset;
+
+      const newQuantity = 1;
+
+      updateQuantity(productId, newQuantity);
+
+      let quantityLabel = 
+        document.querySelector(`.js-quantity-label-${productId}`);
+
+      let quantityLabelValue = 
+        Number(quantityLabel.innerHTML);
+
+      let quantityLabelNewValue = quantityLabelValue += 1;
+
+      quantityLabel.innerHTML = quantityLabelNewValue;
+      updateCartQuantity();
+    });
+  });
+
+document.querySelectorAll('.js-decrease-quantity')
+  .forEach((link) => {
+    link.addEventListener('click', () => {
+      const {productId} = link.dataset;
+
+      const newQuantity = -1;
+
+      updateQuantity(productId, newQuantity);
+
+      let quantityLabel = 
+        document.querySelector(`.js-quantity-label-${productId}`);
+
+      let quantityLabelValue = 
+        Number(quantityLabel.innerHTML);
+
+      let quantityLabelNewValue = quantityLabelValue -= 1;
+
+      quantityLabel.innerHTML = quantityLabelNewValue;
+      updateCartQuantity();
+    });
+  });
+
+function updateCartQuantity () {
+  let quantity = 0;
+
+  cart.forEach(cartItem => {
+    quantity += cartItem.quantity;
+  });
+
+  document.querySelector('.js-checkout-quantity')
+    .innerHTML = `Products (${quantity})`;
+}

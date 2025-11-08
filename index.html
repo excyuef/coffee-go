@@ -30,7 +30,7 @@ lang="en">
 <body
 class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
   <nav
-  class="flex justify-between sm:justify-center p-4 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-white border-b-2 border-gray-300 lg:py-6">
+  class="flex justify-between sm:justify-between pl-16 pr-4 py-4 lg:pl-28 lg:pr-25 rounded-b-xl fixed top-0 right-0 left-0 z-5000 bg-white border-b-2 border-gray-300 lg:py-6">
     <div>
       <div
       class="absolute left-4 lg:left-25 lg:text-xl flex flex-row gap-2 items-center">
@@ -70,11 +70,6 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
       </a>
       <a 
       class="nav-link"
-      href="cart.html">
-        Keranjang
-      </a>
-      <a 
-      class="nav-link"
       href="#menu"
       id="menuLink">
         Menu
@@ -92,10 +87,27 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
     </div>
 
     <div
-    class="sm:hidden text-espresso"
-    id="hamburger">
-      <i class="hover:text-kopi transition-all ease"
-      data-feather="menu"></i>
+    class="text-espresso flex flex-row gap-3">
+      <div
+      class="relative">
+        <a
+        class="" 
+        href="cart.html">
+          <div
+          class="js-cart-quantity
+          w-4 py-0.5 px-3 aspect-square rounded-full bg-kopi absolute text-cream font-medium text-xs flex justify-center items-center z-10 right-7">
+          </div>
+          <i
+          class="hover:text-kopi transition-all ease scale-105 sm:scale-120"
+          data-feather="shopping-cart"></i>
+        </a>
+      </div>
+      <div
+      class="sm:hidden"
+      id="hamburger">
+        <i class="hover:text-kopi transition-all ease"
+        data-feather="menu"></i>
+      </div>
     </div>
   </nav> 
 
@@ -436,7 +448,9 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5 hover:bg-daunkopi hover:text-cream transition-all ease duration-400">
+                  class="js-add-to-cart
+                  bg-white rounded-full p-2.5 hover:bg-daunkopi hover:text-cream transition-all ease duration-400"
+                  data-product-id="id2">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -483,7 +497,9 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5 hover:bg-espresso hover:text-cream transition-all ease duration-400">
+                  class="js-add-to-cart
+                  bg-white rounded-full p-2.5 hover:bg-espresso hover:text-cream transition-all ease duration-400"
+                  data-product-id="id3">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>
@@ -530,7 +546,9 @@ class="bg-cream pt-18 font-poppins md:pt-26 text-kopi">
                     Order Now
                   </button>
                   <button
-                  class="bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400">
+                  class="js-add-to-cart
+                  bg-white rounded-full p-2.5 hover:bg-kopi hover:text-cream transition-all ease duration-400"
+                  data-product-id="id4">
                     <i data-feather="shopping-cart"></i>
                   </button>
                 </div>

@@ -1,27 +1,18 @@
+export let cart = JSON.parse(localStorage.getItem('cart'));
 
-
-export let cart = 
-  [
-    {
-      productId: "id1",
-      quantity: 2,
-    },
-    {
-      productId: "id2",
-      quantity: 1,
-    },
-    {
-      productId: "id3",
-      quantity: 1,
-    },
-    {
-      productId: "id4",
-      quantity: 1,
-    }
-  ]
-
-function saveToLocalStorage () {
+export function saveToLocalStorage () {
   localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+export function updateCartQuantity () {
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector(".js-cart-quantity")
+    .innerHTML = cartQuantity;
 }
 
 export function addToCart(productId) {
@@ -38,9 +29,37 @@ export function addToCart(productId) {
   } else {
     cart.push({
       productId,
-      quantity,
+      quantity: 1
     });
   }
   console.log(cart);
+  saveToLocalStorage();
+}
+
+export function removeFromCart (productId) {
+  const newCart = [];
+
+  cart.forEach( (cartItem) => {
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  });
+  
+  cart = newCart;
+
+  saveToLocalStorage();
+}
+
+export function updateQuantity (productId, newQuantity) {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.quantity += newQuantity;
+
   saveToLocalStorage();
 }
