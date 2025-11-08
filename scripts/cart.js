@@ -4,7 +4,7 @@ export let cart = JSON.parse(localStorage.getItem('cart'));
         { 
           productId: 'id5',
           quantity: 0,
-          class: true
+          hidden: true
         }
       ]
   }

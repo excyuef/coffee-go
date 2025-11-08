@@ -29,29 +29,29 @@ cart.forEach( cartItem => {
   
   const isText = matchingItem.text;
   const isScale = matchingItem.scale;
-  const isClass = cartItem.class;
+  const isClass = matchingItem.class;
+  const isHidden = cartItem.hidden
 
   cartSummaryHTML += 
   ` 
     <div
-    class="container-${matchingItem.id} ${isClass ? 'hidden' : ''}
-    h-68 border ${matchingItem.bg} rounded-2xl">
+    class="container-${matchingItem.id} ${isHidden ? 'hidden' : ''} h-68 border ${matchingItem.bg} rounded-2xl">
       <div
-      class="w-full md:w-auto"
+      class="w-full md:w-auto h-full"
       data-aos="zoom-in">
         <div
-        class="rounded-xl flex flex-row px-4 items-center h-68 overflow-hidden">
+        class="rounded-xl flex flex-row h-full overflow-hidden p-4">
           <div
-          class="w-full h-full flex justify-center items-center group transition-all ease group relative">
+          class="w-full h-full flex justify-center items-center group transition-all ease group relative overflow-hidden">
             <img 
-            class="h-24 absolute ${isScale ? isScale : 'scale-180'} z-10 group-hover:scale-200 transition-all ease"
+            class="h-24 absolute ${isScale ? isScale : 'scale-160'} z-10 group-hover:scale-200 transition-all ease ${isClass ? 'mb-14' : ''}"
             src="${matchingItem.image}">
             <img 
             class="absolute h-32 w-32 scale-200 object-cover group-hover:scale-250 transition-all ease"
             src="${matchingItem.element}">
           </div>
           <div
-          class="w-full h-60 font-semibold ${isText ? 'text-espresso' : 'text-susu'} py-4 px-4 flex flex-col justify-between bg-black/10 rounded-xl">
+          class="w-full h-full font-semibold ${isText ? 'text-espresso' : 'text-susu'} py-4 px-4 flex flex-col justify-between bg-black/10 rounded-xl">
             <div>
               <p
               class="text-xl mb-2">

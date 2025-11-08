@@ -24,7 +24,8 @@ export let products  = [
     rupiah: '8.000,00',
     element: 'images/element/element-bean-4.png',
     bg: 'bg-espresso',
-    scale: 'scale-400'
+    scale: 'scale-350',
+    class: true
   },
   {
     id: "id4",
@@ -33,7 +34,7 @@ export let products  = [
     rupiah: '10.000,00',
     element: 'images/element/element-splash.png',
     bg: 'bg-linear-to-t from-kopi to-susu',
-    scale: 'scale-220'
+    scale: 'scale-200'
   },
   {
     id: "id5",
@@ -42,6 +43,6 @@ export let products  = [
     rupiah: '10.000,00',
     element: 'images/element/element-splash.png',
     bg: 'bg-linear-to-t from-kopi to-susu',
-    scale: 'scale-220'
+    scale: 'scale-200',
   }
 ];
