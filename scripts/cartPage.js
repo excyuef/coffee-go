@@ -17,6 +17,7 @@ feather.replace();
 
 let matchingItem;
 let cartSummaryHTML = '';
+let popoverBuyHTML = '';
 
 cart.forEach( cartItem => {
   const productId = cartItem.productId;
@@ -30,7 +31,46 @@ cart.forEach( cartItem => {
   const isText = matchingItem.text;
   const isScale = matchingItem.scale;
   const isClass = matchingItem.class;
-  const isHidden = cartItem.hidden
+  const isHidden = cartItem.hidden;
+
+  popoverBuyHTML +=
+        `
+          <div 
+          popover
+          id="popover-buy"
+          anchor="btnBuy"
+          class="bg-kopi m-auto scale-120 lg:scale-150 rounded-xl starting:open:opacity-0 opacity-0 open:opacity-100 transition-all transition-discrete duration-400 pt-6 px-3 pb-3">
+            <div
+            class="px-12">
+              <div
+              class="aspect-square h-10 rounded-full bg-cream m-auto mb-3 flex items-center justify-center">
+                <img
+                class="aspect-square w-7 object-center object-cover" 
+                src="/images/icon/logo.png" 
+                alt="logo">
+              </div>
+
+              <div class="text-center">
+                <p 
+                class="text-slate-100 font-semibold mb-3">
+                  Welcome to Coffee Go
+                </p>
+                <p 
+                class="text-slate-100 font-medium text-xs mb-5">
+                  Pesan kamu sudah terkirim :) <br>
+                  click the button to closed
+                </p>
+              </div>
+            </div>
+
+              <button 
+              class="bg-cream text-kopi text-xs py-1.5 px-2 font-semibold rounded-sm w-full"
+              popovertarget="bought">
+                Buy
+              </button>
+            </div>
+          </div>
+        `
 
   cartSummaryHTML += 
   ` 
@@ -93,8 +133,12 @@ cart.forEach( cartItem => {
             <div
               class="w-full flex items-center justify-between text-espresso">
                 <button
-                class="bg-white px-3 py-3 rounded-4xl font-semibold text-sm transition-all ease hover:scale-110"
-                popovertarget="popover-order">
+                class="js-popover-buy-now
+                bg-white px-3 py-3 rounded-4xl font-semibold text-sm transition-all ease hover:scale-110"
+
+                popovertarget="popover-buy"
+                id="btnBuy"
+                data-product-id="${matchingItem.id}">
                   Buy Now
                 </button>
                 <button
@@ -186,3 +230,13 @@ function updateCartQuantity () {
   document.querySelector('.js-checkout-quantity')
     .innerHTML = `Products (${quantity})`;
 }
+
+document.querySelector('.popover')
+  .innerHTML = popoverBuyHTML;
+
+document.querySelectorAll('.js-popover-buy-now')
+  .forEach(button => {
+    button.addEventListener('click', () => {
+
+    })
+  })
